@@ -1,22 +1,11 @@
-package com.example;
+package com.example.fleamarket;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Reader;
-import java.io.Writer;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import java.nio.charset.Charset;
+import java.sql.*;
 
-import com.example.myapplication.User;
+import com.example.fleamarket.net.NetMessage;
 
 public class Server {
 
@@ -76,7 +65,6 @@ class ServerThread extends Thread{
     @Override
     public void run() {
         System.out.println("有客户端接入");
-        //while(true) {
         try {
 //				Reader reader = new InputStreamReader(input, Charset.forName("utf-8"));
 //				BufferedReader br = new BufferedReader(reader);
@@ -90,8 +78,51 @@ class ServerThread extends Thread{
 //					break;
 //				}
             ObjectInputStream ois = new ObjectInputStream(clientConnection.getInputStream());
-            User user = (User)ois.readObject();
-            System.out.println("服务器端接收到对象，账号为" + user.getAccount() + ",密码为" + user.getPassword());
+            NetMessage message = (NetMessage) ois.readObject();
+            String id = message.getId();
+            String pw = message.getPw();
+            // 封装成独立的查询类！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+            Connection connection = null;
+            Statement statement = null;
+            ResultSet rs = null;
+            try {
+                connection = DriverManager.getConnection("jdbc:sqlite:datebase/user.db");
+                statement = connection.createStatement();
+                rs = statement.executeQuery("select * from User");
+                boolean loginSuccess = false;
+                while (rs.next()){
+                    if(rs.getString("ID").equals(id)){
+                        if(rs.getString("Password").equals(pw)){
+                            loginSuccess = true;
+                            break;
+                        }
+                    }
+                }
+                Writer out = new OutputStreamWriter(clientConnection.getOutputStream()/*, Charset.forName("utf-8")*/);
+                if(loginSuccess){
+                    out.write("login success\r\n");
+                }else{
+                    out.write("login failure\r\n");
+                }
+                out.flush();
+
+            } catch (SQLException e){
+                System.err.println(e.getMessage());
+            } finally {
+                try { // 确保各种数据库对象都被关闭
+                    if(connection != null){
+                        connection.close();
+                    }
+                    if(statement != null){
+                        statement.close();
+                    }
+                    if(rs != null){
+                        rs.close();
+                    }
+                } catch (SQLException e){
+                    System.err.println(e);
+                }
+            }
 
 //				StringBuffer result = new StringBuffer();
 //				result.append("HTTP /1.1 200 ok \r\n");
@@ -101,17 +132,10 @@ class ServerThread extends Thread{
 //				output.write(result.toString().getBytes());
 //				output.flush();
 //				output.close();
+            clientConnection.close();
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("异常信息" + e);
         }
-        //}
-        try {
-            clientConnection.close();
-            System.out.println("服务端Socket关闭");
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
     }
 }

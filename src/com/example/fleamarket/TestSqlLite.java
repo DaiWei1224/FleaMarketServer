@@ -1,4 +1,4 @@
-package com.example;
+package com.example.fleamarket;
 
 import java.sql.*;
 
@@ -9,32 +9,32 @@ public class TestSqlLite {
         ResultSet rs = null;
         try {
             // 创建数据库连接
-            connection = DriverManager.getConnection("jdbc:sqlite:datebase/test.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:datebase/user.db");
             // 准备创建操作与存取的数据库命令
             statement = connection.createStatement();
-            executeQuery(rs, statement, "select * from test");
+            executeQuery(rs, statement, "select * from User");
 
             // 插入数据时，可以不指定自增字段的值，而由数据库自己生成
-            int rowAffected = statement.executeUpdate("insert into test(Number,Name,Age)" + "values('1170','超哥','1')");
+            int rowAffected = statement.executeUpdate("insert into User(ID,Password,Nickname)" + "values('1120161648','233','超哥')");
             if(rowAffected > 0){
                 // 数据成功插入
-                executeQuery(rs, statement, "select * from test");
+                executeQuery(rs, statement, "select * from User");
             }else{
                 System.err.println("插入操作失败");
             }
 
-            rowAffected = statement.executeUpdate("update test set Age=2 where Name='超哥'");
+            rowAffected = statement.executeUpdate("update User set Password=234 where Nickname='超哥'");
             if(rowAffected > 0){
                 // 数据成功更新
-                executeQuery(rs, statement, "select * from test");
+                executeQuery(rs, statement, "select * from User");
             }else{
                 System.err.println("更新操作失败");
             }
 
-            rowAffected = statement.executeUpdate("delete from test where Name='超哥'");
+            rowAffected = statement.executeUpdate("delete from User where Nickname='超哥'");
             if(rowAffected > 0){
                 // 数据成功删除
-                executeQuery(rs, statement, "select * from test");
+                executeQuery(rs, statement, "select * from User");
             }else{
                 System.err.println("删除操作失败");
             }
@@ -61,13 +61,13 @@ public class TestSqlLite {
     public static void executeQuery(ResultSet rs, Statement statement, String sql){
         // 查询表中保存的护具
         try {
-            rs = statement.executeQuery("select * from test");
+            rs = statement.executeQuery(sql);
             System.out.println("==============start==============");
             while (rs.next()){
                 // 输出查询到的数据
-                System.out.println("number = " + rs.getInt("Number"));
-                System.out.println("name = " + rs.getString("Name"));
-                System.out.println("age = " + rs.getInt("Age"));
+                System.out.println("id = " + rs.getInt("ID"));
+                System.out.println("password = " + rs.getString("Password"));
+                System.out.println("nickname = " + rs.getString("Nickname"));
                 System.out.println(" ");
             }
             System.out.println("==============end==============");
