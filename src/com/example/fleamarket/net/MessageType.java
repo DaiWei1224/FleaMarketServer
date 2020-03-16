@@ -1,5 +1,6 @@
 package com.example.fleamarket.net;
 
 public enum MessageType {
-    LOGIN
+    LOGIN,
+    REGISTER
 }

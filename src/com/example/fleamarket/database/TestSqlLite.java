@@ -1,4 +1,4 @@
-package com.example.fleamarket;
+package com.example.fleamarket.database;
 
 import java.sql.*;
 

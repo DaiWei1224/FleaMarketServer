@@ -1,5 +1,6 @@
-package com.example.fleamarket;
+package com.example.fleamarket.database;
 
+import java.io.File;
 import java.sql.*;
 
 public class TableCreater {
@@ -8,21 +9,29 @@ public class TableCreater {
         Statement statement = null;
         ResultSet rs = null;
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:datebase/user.db");
+//            connection = DriverManager.getConnection("jdbc:sqlite:datebase/user.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:datebase/invitation_code.db");
             statement = connection.createStatement();
+            rs = statement.executeQuery("select * from InvitationCode");
+            while (rs.next()){
+                if(rs.getString("Code").equals("VI920P")){
+                    System.out.println("334");
+                    break;
+                }
+            }
+//            statement = connection.createStatement();
+
 //            statement.executeUpdate("drop table User");
 //            statement.executeUpdate("create table User(" +
 //                    "ID integer primary key," +
 //                    "Password text not null," +
-//                    "Nickname text," +
-//                    "Tel integer," +
-//                    "Email text," +
-//                    "Avater text)");
-            statement.executeUpdate("update User set ID='12345' where Nickname='David'");
-//            int rowAffected = statement.executeUpdate("insert into User(ID,Password,Nickname)" + "values(1120161649,'sfsf233424','David')");
+//                    "Nickname text)");
+//            statement.executeUpdate("v");
+
+//            int rowAffected = statement.executeUpdate("insert into User(ID,Password)" + "values(12345,'david666')");
 //            if(rowAffected > 0){
 //                    // 数据成功插入
-//                    executeQuery(rs, statement, "select * from test");
+////                    executeQuery(rs, statement, "select * from test");
 //                }else{
 //                    System.err.println("插入操作失败");
 //            }
