@@ -54,6 +54,7 @@ class ServerThread extends Thread{
                 case LOGIN:{
                     String id = message.getId();
                     String pw = message.getPw();
+                    String nickname = null;
                     // 查询用户表
                     ResultSet rs = DBHelper.query("jdbc:sqlite:datebase/user.db", "select * from User");
                     boolean loginSuccess = false;
@@ -61,18 +62,22 @@ class ServerThread extends Thread{
                         if(rs.getString("ID").equals(id)){
                             if(rs.getString("Password").equals(pw)){
                                 loginSuccess = true;
+                                nickname = rs.getString("Nickname");
                                 break;
                             }
                         }
                     }
-                    DBHelper.close();
-                    Writer out = new OutputStreamWriter(clientConnection.getOutputStream()/*, Charset.forName("utf-8")*/);
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
                     if(loginSuccess){
-                        out.write("login success\r\n");
+                        message.setType(MessageType.SUCCESS);
+                        message.setId(id);
+                        message.setNickname(nickname);
                     }else{
-                        out.write("login failure\r\n");
+                        message.setType(MessageType.FAILURE);
                     }
-                    out.flush();
+                    oos.writeObject(message);
+                    DBHelper.close();
                 } break;
                 case REGISTER:{
                     String invitationCode = message.getId();
@@ -90,9 +95,10 @@ class ServerThread extends Thread{
                         }
                     }
                     DBHelper.close();
-                    Writer out = new OutputStreamWriter(clientConnection.getOutputStream()/*, Charset.forName("utf-8")*/);
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
                     if(invitationCodeExist){
-                        out.write("register failure\r\n");
+                        returnMessage.setType(MessageType.FAILURE);
                     }else{
                         // 设置邀请码为已经使用
                         DBHelper.update("jdbc:sqlite:datebase/invitation_code.db",
@@ -105,9 +111,10 @@ class ServerThread extends Thread{
                         File file = new File("./datebase/User/" + id);
                         file.mkdir();
                         // 将注册成功后的账号发送给客户端
-                        out.write(id + "\r\n");
+                        returnMessage.setType(MessageType.SUCCESS);
+                        returnMessage.setId(id);
                     }
-                    out.flush();
+                    oos.writeObject(message);
                 } break;
                     default:
             }

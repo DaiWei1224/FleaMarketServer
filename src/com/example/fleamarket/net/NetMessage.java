@@ -7,6 +7,7 @@ public class NetMessage implements Serializable {
     private MessageType type;
     private String id;
     private String pw;
+    private String nickname;
 
     public MessageType getType() {
         return type;
@@ -30,5 +31,13 @@ public class NetMessage implements Serializable {
 
     public void setPw(String pw) {
         this.pw = pw;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 }
