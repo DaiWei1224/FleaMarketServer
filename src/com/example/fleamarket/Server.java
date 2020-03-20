@@ -51,6 +51,7 @@ class ServerThread extends Thread{
             NetMessage message = (NetMessage) ois.readObject();
             MessageType type = message.getType();
             switch (type){
+                // 登录
                 case LOGIN:{
                     String id = message.getId();
                     String pw = message.getPw();
@@ -70,15 +71,17 @@ class ServerThread extends Thread{
                     ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
                     NetMessage returnMessage = new NetMessage();
                     if(loginSuccess){
-                        message.setType(MessageType.SUCCESS);
-                        message.setId(id);
-                        message.setNickname(nickname);
+                        returnMessage.setType(MessageType.SUCCESS);
+                        returnMessage.setId(id);
+                        returnMessage.setNickname(nickname);
+                        returnMessage.setPw(pw);
                     }else{
-                        message.setType(MessageType.FAILURE);
+                        returnMessage.setType(MessageType.FAILURE);
                     }
-                    oos.writeObject(message);
+                    oos.writeObject(returnMessage);
                     DBHelper.close();
                 } break;
+                // 注册
                 case REGISTER:{
                     String invitationCode = message.getId();
                     String pw = message.getPw();
@@ -114,7 +117,41 @@ class ServerThread extends Thread{
                         returnMessage.setType(MessageType.SUCCESS);
                         returnMessage.setId(id);
                     }
-                    oos.writeObject(message);
+                    oos.writeObject(returnMessage);
+                } break;
+                // 修改昵称
+                case CHANGE_NICKNAME:{
+                    String id = message.getId();
+                    String newNickname = message.getNickname();
+                    int rowAffected = DBHelper.update("jdbc:sqlite:datebase/user.db",
+                            "update User set Nickname='" + newNickname + "' where ID=" + id);
+                    DBHelper.close();
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
+                    if (rowAffected > 0) {
+                        returnMessage.setType(MessageType.CHANGE_NICKNAME);
+                        returnMessage.setNickname(newNickname);
+                    } else {
+                        returnMessage.setType(MessageType.FAILURE);
+                    }
+                    oos.writeObject(returnMessage);
+                } break;
+                // 修改密码
+                case CHANGE_PASSWORD:{
+                    String id = message.getId();
+                    String newPassword = message.getPw();
+                    int rowAffected = DBHelper.update("jdbc:sqlite:datebase/user.db",
+                            "update User set Password='" + newPassword + "' where ID=" + id);
+                    DBHelper.close();
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
+                    if (rowAffected > 0) {
+                        returnMessage.setType(MessageType.CHANGE_PASSWORD);
+                        returnMessage.setPw(newPassword);
+                    } else {
+                        returnMessage.setType(MessageType.FAILURE);
+                    }
+                    oos.writeObject(returnMessage);
                 } break;
                     default:
             }

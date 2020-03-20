@@ -21,11 +21,12 @@ public class DBHelper {
     }
 
     // 数据库更新操作
-    public static void update(String db, String sql){
+    public static int update(String db, String sql){
+        int rowAffected = 0;
         try {
             connection = DriverManager.getConnection(db);
             statement = connection.createStatement();
-            int rowAffected = statement.executeUpdate(sql);
+            rowAffected = statement.executeUpdate(sql);
             if(rowAffected > 0){
                 System.out.println("命令执行成功：" + sql);
             }else{
@@ -34,6 +35,7 @@ public class DBHelper {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return rowAffected;
     }
 
     // 确保各种数据库对象都被关闭

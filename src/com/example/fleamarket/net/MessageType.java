@@ -4,5 +4,7 @@ public enum MessageType {
     SUCCESS,
     FAILURE,
     LOGIN,
-    REGISTER
+    REGISTER,
+    CHANGE_NICKNAME,
+    CHANGE_PASSWORD
 }
