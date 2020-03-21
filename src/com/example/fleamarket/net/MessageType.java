@@ -6,5 +6,6 @@ public enum MessageType {
     LOGIN,
     REGISTER,
     CHANGE_NICKNAME,
-    CHANGE_PASSWORD
+    CHANGE_PASSWORD,
+    SAVE_AVATAR
 }

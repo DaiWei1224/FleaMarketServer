@@ -7,7 +7,9 @@ import java.sql.*;
 
 import com.example.fleamarket.database.DBHelper;
 import com.example.fleamarket.net.MessageType;
+import com.example.fleamarket.net.NetImage;
 import com.example.fleamarket.net.NetMessage;
+import com.example.fleamarket.utils.MyUtil;
 
 public class Server {
 
@@ -57,7 +59,7 @@ class ServerThread extends Thread{
                     String pw = message.getPw();
                     String nickname = null;
                     // 查询用户表
-                    ResultSet rs = DBHelper.query("jdbc:sqlite:datebase/user.db", "select * from User");
+                    ResultSet rs = DBHelper.query("jdbc:sqlite:database/user.db", "select * from User");
                     boolean loginSuccess = false;
                     while (rs.next()){
                         if(rs.getString("ID").equals(id)){
@@ -75,6 +77,12 @@ class ServerThread extends Thread{
                         returnMessage.setId(id);
                         returnMessage.setNickname(nickname);
                         returnMessage.setPw(pw);
+                        File file = new File("./database/avatar/avatar_" + id + ".jpg");
+                        if (file.exists()) {
+                            NetImage netImage = new NetImage();
+                            netImage.setData(MyUtil.loadImageFromFile(file));
+                            returnMessage.setAvatar(netImage);
+                        }
                     }else{
                         returnMessage.setType(MessageType.FAILURE);
                     }
@@ -87,7 +95,7 @@ class ServerThread extends Thread{
                     String pw = message.getPw();
                     String id = null;
                     // 查询邀请码表
-                    ResultSet rs = DBHelper.query("jdbc:sqlite:datebase/invitation_code.db",
+                    ResultSet rs = DBHelper.query("jdbc:sqlite:database/invitation_code.db",
                             "select * from InvitationCode");
                     boolean invitationCodeExist = true;
                     while (rs.next()){
@@ -104,14 +112,14 @@ class ServerThread extends Thread{
                         returnMessage.setType(MessageType.FAILURE);
                     }else{
                         // 设置邀请码为已经使用
-                        DBHelper.update("jdbc:sqlite:datebase/invitation_code.db",
+                        DBHelper.update("jdbc:sqlite:database/invitation_code.db",
                                 "update InvitationCode set Use=true where Code='" + invitationCode+"'");
                         // 将该用户信息插入到User数据库中
-                        DBHelper.update("jdbc:sqlite:datebase/user.db",
+                        DBHelper.update("jdbc:sqlite:database/user.db",
                                 "insert into User(ID,Password,Nickname)" + "values("+id+",'"+pw+"','用户_"+id+"')");
                         DBHelper.close();
                         // 创建用户文件夹
-                        File file = new File("./datebase/User/" + id);
+                        File file = new File("./database/User/" + id);
                         file.mkdir();
                         // 将注册成功后的账号发送给客户端
                         returnMessage.setType(MessageType.SUCCESS);
@@ -123,7 +131,7 @@ class ServerThread extends Thread{
                 case CHANGE_NICKNAME:{
                     String id = message.getId();
                     String newNickname = message.getNickname();
-                    int rowAffected = DBHelper.update("jdbc:sqlite:datebase/user.db",
+                    int rowAffected = DBHelper.update("jdbc:sqlite:database/user.db",
                             "update User set Nickname='" + newNickname + "' where ID=" + id);
                     DBHelper.close();
                     ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
@@ -140,7 +148,7 @@ class ServerThread extends Thread{
                 case CHANGE_PASSWORD:{
                     String id = message.getId();
                     String newPassword = message.getPw();
-                    int rowAffected = DBHelper.update("jdbc:sqlite:datebase/user.db",
+                    int rowAffected = DBHelper.update("jdbc:sqlite:database/user.db",
                             "update User set Password='" + newPassword + "' where ID=" + id);
                     DBHelper.close();
                     ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
@@ -151,6 +159,27 @@ class ServerThread extends Thread{
                     } else {
                         returnMessage.setType(MessageType.FAILURE);
                     }
+                    oos.writeObject(returnMessage);
+                } break;
+                // 保存头像
+                case SAVE_AVATAR:{
+                    byte[] data = message.getAvatar().getData();
+                    File image = new File("./database/avatar/avatar_" + message.getId() + ".jpg");
+                    try {
+                        if (image.exists()){
+                            image.delete();
+                        }
+                        image.createNewFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    OutputStream os = new FileOutputStream(image);
+                    os.write(data);
+                    os.close();
+
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
+                    returnMessage.setType(MessageType.SAVE_AVATAR);
                     oos.writeObject(returnMessage);
                 } break;
                     default:

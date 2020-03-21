@@ -8,6 +8,7 @@ public class NetMessage implements Serializable {
     private String id;
     private String pw;
     private String nickname;
+    private NetImage avatar;
 
     public MessageType getType() {
         return type;
@@ -40,4 +41,13 @@ public class NetMessage implements Serializable {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
+
+    public NetImage getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(NetImage avatar) {
+        this.avatar = avatar;
+    }
+
 }

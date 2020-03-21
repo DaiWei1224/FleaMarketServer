@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c49b4b-2f41-46be-a701-dc1e15adaeab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/datebase/user.db" beforeDir="false" afterPath="$PROJECT_DIR$/datebase/user.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/fleamarket/utils/MyUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datebase/invitation_code.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/invitation_code.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datebase/user.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/user.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/net/MessageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/net/MessageType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/net/NetMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/net/NetMessage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            <state relative-caret-position="207">
+              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -31,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="621">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -40,8 +48,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="161" lean-forward="true" selection-start-line="161" selection-end-line="161" />
+            <state relative-caret-position="289">
+              <caret line="88" column="51" lean-forward="true" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/utils/MyUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -49,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
+            <state relative-caret-position="826">
               <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
             </state>
           </provider>
@@ -58,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="115">
+              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -86,19 +115,28 @@
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/myapplication/User.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/database/TestSqlLite.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/database/TableCreater.java" />
-        <option value="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" />
-        <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" />
+        <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java" />
+        <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" />
+        <option value="$PROJECT_DIR$/src/com/example/fleamarket/utils/MyUtil.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" />
       </list>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1946" />
-    <option name="y" value="-25" />
-    <option name="width" value="1934" />
-    <option name="height" value="882" />
+    <option name="x" value="1906" />
+    <option name="y" value="-23" />
+    <option name="width" value="1152" />
+    <option name="height" value="620" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -132,7 +170,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,7 +180,7 @@
             <path>
               <item name="FleaMarketServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="FleaMarketServer" type="462c0819:PsiDirectoryNode" />
-              <item name="datebase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FleaMarketServer" type="b2602c69:ProjectViewProjectNode" />
@@ -174,10 +211,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="D:/eclipse/java-2019-09/eclipse-workspace/HuiBianXiaoXueQI" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -290,7 +333,7 @@
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11727079" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14978679" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -299,7 +342,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.716143" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37703142" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -322,47 +365,132 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database.java" />
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/myapplication/User.java" />
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database/TestSqlLite.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        <state relative-caret-position="115">
+          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="621">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/utils/MyUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
+        <state relative-caret-position="826">
           <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="161" lean-forward="true" selection-start-line="161" selection-end-line="161" />
+        <state relative-caret-position="289">
+          <caret line="88" column="51" lean-forward="true" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
