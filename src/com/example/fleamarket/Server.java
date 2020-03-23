@@ -119,7 +119,7 @@ class ServerThread extends Thread{
                                 "insert into User(ID,Password,Nickname)" + "values("+id+",'"+pw+"','用户_"+id+"')");
                         DBHelper.close();
                         // 创建用户文件夹
-                        File file = new File("./database/User/" + id);
+                        File file = new File("./database/user/" + id);
                         file.mkdir();
                         // 将注册成功后的账号发送给客户端
                         returnMessage.setType(MessageType.SUCCESS);

@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c49b4b-2f41-46be-a701-dc1e15adaeab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/example/fleamarket/utils/MyUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/Commodity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datebase/invitation_code.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/invitation_code.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datebase/user.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/user.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/avatar/avatar_12345.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/database/avatar/avatar_12345.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/avatar/avatar_66666.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/database/avatar/avatar_66666.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/user.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/user.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/net/MessageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/net/MessageType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/net/NetMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/net/NetMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/TableCreater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/TableCreater.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="88" column="51" lean-forward="true" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
+            <state relative-caret-position="481">
+              <caret line="122" column="37" lean-forward="true" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -57,10 +54,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/utils/MyUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="115">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/Commodity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1170#1171#0" expanded="true" />
+                <element signature="e#1205#1206#0" expanded="true" />
+                <element signature="e#1259#1260#0" expanded="true" />
+                <element signature="e#1301#1302#0" expanded="true" />
+                <element signature="e#1341#1342#0" expanded="true" />
+                <element signature="e#1378#1379#0" expanded="true" />
+                <element signature="e#1436#1437#0" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
+                <element signature="e#1563#1564#0" expanded="true" />
+                <element signature="e#1625#1626#0" expanded="true" />
+                <element signature="e#1675#1676#0" expanded="true" />
+                <element signature="e#1707#1708#0" expanded="true" />
+                <element signature="e#1736#1737#0" expanded="true" />
+                <element signature="e#1778#1779#0" expanded="true" />
+                <element signature="e#1808#1809#0" expanded="true" />
+                <element signature="e#1843#1844#0" expanded="true" />
+                <element signature="e#1875#1876#0" expanded="true" />
+                <element signature="e#1923#1924#0" expanded="true" />
+                <element signature="e#1959#1960#0" expanded="true" />
+                <element signature="e#1996#1997#0" expanded="true" />
+                <element signature="e#2030#2031#0" expanded="true" />
+                <element signature="e#2082#2083#0" expanded="true" />
+                <element signature="e#2122#2123#0" expanded="true" />
+                <element signature="e#2153#2154#0" expanded="true" />
+                <element signature="e#2181#2182#0" expanded="true" />
+                <element signature="e#2221#2222#0" expanded="true" />
+                <element signature="e#2249#2250#0" expanded="true" />
+                <element signature="e#2282#2283#0" expanded="true" />
+                <element signature="e#2314#2315#0" expanded="true" />
+                <element signature="e#2360#2361#0" expanded="true" />
+                <element signature="e#2396#2397#0" expanded="true" />
+                <element signature="e#2432#2433#0" expanded="true" />
+                <element signature="e#2464#2465#0" expanded="true" />
+                <element signature="e#2515#2516#0" expanded="true" />
+                <element signature="e#2557#2558#0" expanded="true" />
+                <element signature="e#2600#2601#0" expanded="true" />
+                <element signature="e#2638#2639#0" expanded="true" />
+                <element signature="e#2700#2701#0" expanded="true" />
+                <element signature="e#2748#2749#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,17 +127,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="826">
+            <state relative-caret-position="851">
               <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+            <state relative-caret-position="340">
+              <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,12 +168,14 @@
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/database/TestSqlLite.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/database/TableCreater.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java" />
-        <option value="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/utils/MyUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/example/fleamarket/hellor.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" />
+        <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/Commodity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" />
       </list>
     </option>
   </component>
@@ -133,43 +187,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1906" />
-    <option name="y" value="-23" />
-    <option name="width" value="1152" />
-    <option name="height" value="620" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
-              <item name="com.example" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
-              <item name="com.example" type="1f31426a:PackageElementNode" />
-              <item name="myapplication" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
-              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,12 +238,39 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
+              <item name="com.example" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
+              <item name="com.example" type="1f31426a:PackageElementNode" />
+              <item name="myapplication" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="D:/eclipse/java-2019-09/eclipse-workspace/HuiBianXiaoXueQI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -237,6 +291,19 @@
   <component name="RunManager" selected="Application.Server">
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.fleamarket.Server" />
+      <module name="FleaMarketServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.fleamarket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableCreater (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.fleamarket.TableCreater" />
       <module name="FleaMarketServer" />
       <extension name="coverage">
         <pattern>
@@ -303,6 +370,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.TableCreater (1)" />
         <item itemvalue="Application.TableCreater" />
         <item itemvalue="Application.TestSqlLite" />
       </list>
@@ -332,8 +400,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14978679" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19722815" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -342,7 +411,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37703142" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37703142" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -365,17 +434,28 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database.java" />
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/myapplication/User.java" />
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database/TestSqlLite.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/io/BufferedWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="43" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        <state relative-caret-position="182">
+          <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/io/PrintStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        <state relative-caret-position="289">
+          <caret line="525" column="28" selection-start-line="525" selection-start-column="28" selection-end-line="525" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/hellor.java" />
+    <entry file="file://$PROJECT_DIR$/../learning_Kotlin/learning_Kotlin.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -386,16 +466,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/utils/MyUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="115">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -403,17 +476,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
+        <state relative-caret-position="851">
           <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/Commodity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1170#1171#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1341#1342#0" expanded="true" />
+            <element signature="e#1378#1379#0" expanded="true" />
+            <element signature="e#1436#1437#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1563#1564#0" expanded="true" />
+            <element signature="e#1625#1626#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1736#1737#0" expanded="true" />
+            <element signature="e#1778#1779#0" expanded="true" />
+            <element signature="e#1808#1809#0" expanded="true" />
+            <element signature="e#1843#1844#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
+            <element signature="e#1923#1924#0" expanded="true" />
+            <element signature="e#1959#1960#0" expanded="true" />
+            <element signature="e#1996#1997#0" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+            <element signature="e#2082#2083#0" expanded="true" />
+            <element signature="e#2122#2123#0" expanded="true" />
+            <element signature="e#2153#2154#0" expanded="true" />
+            <element signature="e#2181#2182#0" expanded="true" />
+            <element signature="e#2221#2222#0" expanded="true" />
+            <element signature="e#2249#2250#0" expanded="true" />
+            <element signature="e#2282#2283#0" expanded="true" />
+            <element signature="e#2314#2315#0" expanded="true" />
+            <element signature="e#2360#2361#0" expanded="true" />
+            <element signature="e#2396#2397#0" expanded="true" />
+            <element signature="e#2432#2433#0" expanded="true" />
+            <element signature="e#2464#2465#0" expanded="true" />
+            <element signature="e#2515#2516#0" expanded="true" />
+            <element signature="e#2557#2558#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
+            <element signature="e#2638#2639#0" expanded="true" />
+            <element signature="e#2700#2701#0" expanded="true" />
+            <element signature="e#2748#2749#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="88" column="51" lean-forward="true" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
+        <state relative-caret-position="481">
+          <caret line="122" column="37" lean-forward="true" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
