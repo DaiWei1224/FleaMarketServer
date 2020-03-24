@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.sql.*;
 
 import com.example.fleamarket.database.DBHelper;
+import com.example.fleamarket.net.Commodity;
 import com.example.fleamarket.net.MessageType;
 import com.example.fleamarket.net.NetImage;
 import com.example.fleamarket.net.NetMessage;
@@ -182,7 +183,48 @@ class ServerThread extends Thread{
                     returnMessage.setType(MessageType.SAVE_AVATAR);
                     oos.writeObject(returnMessage);
                 } break;
+                // 发布商品
+                case POST_COMMODITY:{
+                    Commodity commodity = message.getCommodity();
+                    int rowAffected = DBHelper.update("jdbc:sqlite:database/commodity.db",
+                            "insert into Commodity(CommodityID,CommodityName,Price,HavePhoto,PostTime,SellerID,SellerName,Area,CommodityDetail) values('"
+                                    + commodity.getCommodityID() + "','"
+                                    + commodity.getCommodityName() + "','"
+                                    + commodity.getPrice() + "',"
+                                    + commodity.isHavePhoto() + ",'"
+                                    + commodity.getPostTime() + "','"
+                                    + commodity.getSellerID() + "','"
+                                    + commodity.getSellerName() + "','"
+                                    + commodity.getArea() + "','"
+                                    + commodity.getCommodityDetail() + "')");
+                    DBHelper.close();
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
+                    if (rowAffected > 0) {
+                        if (commodity.isHavePhoto()) {
+                            // 将商品图片保存到本地
+                            byte[] data = commodity.getCommodityPhoto().getData();
+                            File image = new File("./database/commodity/" + commodity.getCommodityID() + ".jpg");
+                            try {
+                                if (image.exists()){
+                                    image.delete();
+                                }
+                                image.createNewFile();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            OutputStream os = new FileOutputStream(image);
+                            os.write(data);
+                            os.close();
+                        }
+                        returnMessage.setType(MessageType.SUCCESS);
+                    } else {
+                        returnMessage.setType(MessageType.FAILURE);
+                    }
+                    oos.writeObject(returnMessage);
+                } break;
                     default:
+                        break;
             }
             clientConnection.close();
         } catch (Exception e) {

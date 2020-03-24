@@ -2,6 +2,8 @@ package com.example.fleamarket;
 
 import java.sql.*;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class TableCreater {
     public static void main(String[] args){
@@ -12,7 +14,6 @@ public class TableCreater {
 //        DecimalFormat decimalFormat=new DecimalFormat("0.00");//构造方法的字符格式这里如果小数不足2位,会以0补足.
 //        String p=decimalFormat.format(a);//format 返回的是字符串
 //        System.out.println(p + "");
-
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:database/commodity.db");
             statement = connection.createStatement();

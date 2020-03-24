@@ -13,31 +13,7 @@ public class Commodity implements Serializable {
     private String mArea;
     private Date mPostTime;
     private boolean havePhoto;
-
     private NetImage mCommodityPhoto;
-
-    public Commodity(
-            String commodityID,
-            String commodityName,
-            String commodityDetail,
-            String price,
-            String sellerID,
-            String sellerName,
-            String area,
-            Date postTime,
-            boolean havePhoto,
-            NetImage commodityPhoto) {
-        mCommodityID = commodityID;
-        mCommodityName = commodityName;
-        mCommodityDetail = commodityDetail;
-        mPrice = price;
-        mSellerID = sellerID;
-        mSellerName = sellerName;
-        mArea = area;
-        mPostTime = postTime;
-        this.havePhoto = havePhoto;
-        mCommodityPhoto = commodityPhoto;
-    }
 
     public String getCommodityID() {
         return mCommodityID;

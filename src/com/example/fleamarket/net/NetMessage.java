@@ -9,6 +9,7 @@ public class NetMessage implements Serializable {
     private String pw;
     private String nickname;
     private NetImage avatar;
+    private Commodity commodity;
 
     public MessageType getType() {
         return type;
@@ -50,4 +51,11 @@ public class NetMessage implements Serializable {
         this.avatar = avatar;
     }
 
+    public Commodity getCommodity() {
+        return commodity;
+    }
+
+    public void setCommodity(Commodity commodity) {
+        this.commodity = commodity;
+    }
 }
