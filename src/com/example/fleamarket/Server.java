@@ -4,6 +4,8 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.fleamarket.database.DBHelper;
 import com.example.fleamarket.net.Commodity;
@@ -187,12 +189,13 @@ class ServerThread extends Thread{
                 case POST_COMMODITY:{
                     Commodity commodity = message.getCommodity();
                     int rowAffected = DBHelper.update("jdbc:sqlite:database/commodity.db",
-                            "insert into Commodity(CommodityID,CommodityName,Price,HavePhoto,PostTime,SellerID,SellerName,Area,CommodityDetail) values('"
+                            "insert into Commodity(CommodityID,CommodityName,Price,HavePhoto,PostTime,PostTimeString,SellerID,SellerName,Area,CommodityDetail) values('"
                                     + commodity.getCommodityID() + "','"
                                     + commodity.getCommodityName() + "','"
                                     + commodity.getPrice() + "',"
                                     + commodity.isHavePhoto() + ",'"
                                     + commodity.getPostTime() + "','"
+                                    + commodity.getPostTimeString() + "','"
                                     + commodity.getSellerID() + "','"
                                     + commodity.getSellerName() + "','"
                                     + commodity.getArea() + "','"
@@ -220,6 +223,58 @@ class ServerThread extends Thread{
                         returnMessage.setType(MessageType.SUCCESS);
                     } else {
                         returnMessage.setType(MessageType.FAILURE);
+                    }
+                    oos.writeObject(returnMessage);
+                } break;
+                // 下发商品
+                case GET_COMMODITY:{
+                    int index = message.getCommodityNum();
+                    // 查询商品表
+                    ResultSet rs = DBHelper.query("jdbc:sqlite:database/commodity.db",
+                            "select * from Commodity order by PostTime DESC");
+                    int i = 0;
+                    int count = 0;
+                    List<Commodity> commodityList = new ArrayList<>();
+                    Commodity commodity;
+                    while (rs.next()){
+                        if (i >= index && i < index + 20) {
+                            commodity = new Commodity();
+                            commodity.setCommodityID(rs.getString("CommodityID"));
+                            commodity.setCommodityName(rs.getString("CommodityName"));
+                            commodity.setCommodityDetail(rs.getString("CommodityDetail"));
+                            commodity.setPrice(rs.getString("Price"));
+                            commodity.setSellerID(rs.getString("SellerID"));
+                            commodity.setSellerName(rs.getString("SellerName"));
+                            commodity.setArea(rs.getString("Area"));
+                            commodity.setPostTimeString(rs.getString("PostTimeString"));
+                            commodity.setHavePhoto(rs.getBoolean("HavePhoto"));
+                            if (commodity.isHavePhoto()) {
+                                // 添加商品照片
+                                File file = new File("./database/commodity/" + commodity.getCommodityID() + ".jpg");
+                                if (file.exists()) {
+                                    NetImage netImage = new NetImage();
+                                    netImage.setData(MyUtil.loadImageFromFile(file));
+                                    commodity.setCommodityPhoto(netImage);
+                                }
+                            }
+                            // 添加头像
+                            File file = new File("./database/avatar/avatar_" + commodity.getSellerID() + ".jpg");
+                            if (file.exists()) {
+                                NetImage netImage = new NetImage();
+                                netImage.setData(MyUtil.loadImageFromFile(file));
+                                commodity.setAvatar(netImage);
+                            }
+                            commodityList.add(commodity);
+                            count++;
+                        }
+                        i++;
+                    }
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
+                    returnMessage.setType(MessageType.SUCCESS);
+                    returnMessage.setCommodityNum(count);
+                    if (count > 0) {
+                        returnMessage.setCommodityList(commodityList);
                     }
                     oos.writeObject(returnMessage);
                 } break;

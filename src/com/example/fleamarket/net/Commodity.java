@@ -12,8 +12,10 @@ public class Commodity implements Serializable {
     private String mSellerName;
     private String mArea;
     private Date mPostTime;
+    private String mPostTimeString;
     private boolean havePhoto;
     private NetImage mCommodityPhoto;
+    private NetImage mAvatar;
 
     public String getCommodityID() {
         return mCommodityID;
@@ -93,6 +95,22 @@ public class Commodity implements Serializable {
 
     public void setCommodityPhoto(NetImage commodityPhoto) {
         mCommodityPhoto = commodityPhoto;
+    }
+
+    public NetImage getAvatar() {
+        return mAvatar;
+    }
+
+    public void setAvatar(NetImage avatar) {
+        mAvatar = avatar;
+    }
+
+    public String getPostTimeString() {
+        return mPostTimeString;
+    }
+
+    public void setPostTimeString(String postTimeString) {
+        mPostTimeString = postTimeString;
     }
 
 }

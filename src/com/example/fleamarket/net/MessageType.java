@@ -8,5 +8,6 @@ public enum MessageType {
     CHANGE_NICKNAME,
     CHANGE_PASSWORD,
     SAVE_AVATAR,
-    POST_COMMODITY
+    POST_COMMODITY,
+    GET_COMMODITY
 }

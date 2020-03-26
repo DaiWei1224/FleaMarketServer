@@ -1,6 +1,7 @@
 package com.example.fleamarket.net;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class NetMessage implements Serializable {
 
@@ -10,6 +11,8 @@ public class NetMessage implements Serializable {
     private String nickname;
     private NetImage avatar;
     private Commodity commodity;
+    private int commodityNum;
+    private List<Commodity> commodityList;
 
     public MessageType getType() {
         return type;
@@ -58,4 +61,21 @@ public class NetMessage implements Serializable {
     public void setCommodity(Commodity commodity) {
         this.commodity = commodity;
     }
+
+    public int getCommodityNum() {
+        return commodityNum;
+    }
+
+    public void setCommodityNum(int commodityNum) {
+        this.commodityNum = commodityNum;
+    }
+
+    public List<Commodity> getCommodityList() {
+        return commodityList;
+    }
+
+    public void setCommodityList(List<Commodity> commodityList) {
+        this.commodityList = commodityList;
+    }
+
 }

@@ -2,6 +2,7 @@ package com.example.fleamarket;
 
 import java.sql.*;
 import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -18,14 +19,15 @@ public class TableCreater {
             connection = DriverManager.getConnection("jdbc:sqlite:database/commodity.db");
             statement = connection.createStatement();
 
-//            statement.executeUpdate("drop table User");
-
+//            statement.executeUpdate("drop table Commodity");
+//
 //            statement.executeUpdate("create table Commodity(" +
 //                    "CommodityID text primary key," +
 //                    "CommodityName text not null," +
 //                    "Price text not null," +
 //                    "HavePhoto boolean not null," +
 //                    "PostTime datetime not null," +
+//                    "PostTimeString text not null," +
 //                    "SellerID text not null," +
 //                    "SellerName text not null," +
 //                    "Area text not null," +
