@@ -35,17 +35,17 @@ public class Server {
 class ServerThread extends Thread{
 
     private Socket clientConnection;
-    private InputStream input;
-    private OutputStream output;
+//    private InputStream input;
+//    private OutputStream output;
 
     public ServerThread(Socket socket){
         this.clientConnection = socket;
-        try {
-            this.input = socket.getInputStream();
-            this.output = socket.getOutputStream();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            this.input = socket.getInputStream();
+//            this.output = socket.getOutputStream();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
@@ -229,9 +229,14 @@ class ServerThread extends Thread{
                 // 下发商品
                 case GET_COMMODITY:{
                     int index = message.getCommodityNum();
-                    // 查询商品表
-                    ResultSet rs = DBHelper.query("jdbc:sqlite:database/commodity.db",
-                            "select * from Commodity order by PostTime DESC");
+                    ResultSet rs;
+                    if (message.getId() == null) {
+                        rs = DBHelper.query("jdbc:sqlite:database/commodity.db",
+                                "select * from Commodity order by PostTime DESC");
+                    } else {
+                        rs = DBHelper.query("jdbc:sqlite:database/commodity.db",
+                                "select * from Commodity where SellerID='" + message.getId() + "' order by PostTime DESC");
+                    }
                     int i = 0;
                     int count = 0;
                     List<Commodity> commodityList = new ArrayList<>();
@@ -277,6 +282,7 @@ class ServerThread extends Thread{
                         returnMessage.setCommodityList(commodityList);
                     }
                     oos.writeObject(returnMessage);
+                    DBHelper.close();
                 } break;
                     default:
                         break;

@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c49b4b-2f41-46be-a701-dc1e15adaeab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/commodity.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/commodity.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/user.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/user.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/ServerThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/TableCreater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FleaMarketServer/com/example/fleamarket/TableCreater.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/net/Commodity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/Commodity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,20 +20,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="252" column="22" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
+            <state relative-caret-position="609">
+              <caret line="283" column="51" selection-start-line="283" selection-start-column="51" selection-end-line="283" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="598">
+              <caret line="30" column="31" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,8 +70,8 @@
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/MessageType.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/net/Commodity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" />
         <option value="$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java" />
+        <option value="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" />
       </list>
     </option>
   </component>
@@ -88,10 +83,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -301,9 +296,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20134228" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20939597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -312,12 +306,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.7266289" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.9575071" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.9674973" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.9575071" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
@@ -406,15 +400,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="252" column="22" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
+        <state relative-caret-position="609">
+          <caret line="283" column="51" selection-start-line="283" selection-start-column="51" selection-end-line="283" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="598">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
