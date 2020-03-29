@@ -33,9 +33,7 @@ public class TableCreater {
 //                    "Area text not null," +
 //                    "CommodityDetail text not null)");
 
-//            statement.executeUpdate(
-//                    "insert into Commodity(CommodityID,CommodityName,Price,HavePhoto,PostTime,SellerID,SellerName,Area,CommodityDetail)"
-//                            + "values('004','蔡徐坤同款篮球','99.99',true,'2020-03-23 22:12143','12345','David','北京理工大学','蔡徐坤同款篮球只要99.99元')");
+//            statement.executeUpdate("update Commodity set CommodityDetail='emmm' where CommodityName='二手黄瓜'");
 //            statement.executeUpdate(
 //                    "delete from Commodity where HavePhoto=1");
         } catch (SQLException e){

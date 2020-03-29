@@ -136,6 +136,9 @@ class ServerThread extends Thread{
                     String newNickname = message.getNickname();
                     int rowAffected = DBHelper.update("jdbc:sqlite:database/user.db",
                             "update User set Nickname='" + newNickname + "' where ID=" + id);
+                    // 同时更新商品数据库
+                    DBHelper.update("jdbc:sqlite:database/commodity.db",
+                            "update Commodity set SellerName='" + newNickname + "' where SellerID=" + id);
                     DBHelper.close();
                     ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
                     NetMessage returnMessage = new NetMessage();
@@ -282,6 +285,7 @@ class ServerThread extends Thread{
                         returnMessage.setCommodityList(commodityList);
                     }
                     oos.writeObject(returnMessage);
+
                     DBHelper.close();
                 } break;
                     default:
