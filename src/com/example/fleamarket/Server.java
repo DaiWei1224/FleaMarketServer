@@ -285,7 +285,58 @@ class ServerThread extends Thread{
                         returnMessage.setCommodityList(commodityList);
                     }
                     oos.writeObject(returnMessage);
-
+                    DBHelper.close();
+                } break;
+                // 编辑商品
+                case EDIT_COMMODITY:{
+                    Commodity commodity = message.getCommodity();
+                    int rowAffected = DBHelper.update("jdbc:sqlite:database/commodity.db",
+                            "update Commodity set CommodityName='" +commodity.getCommodityName() +
+                                    "',Price='" + commodity.getPrice() +
+                                    "',HavePhoto=" + commodity.isHavePhoto() +
+                                    ",Area='" + commodity.getArea() +
+                                    "',CommodityDetail='" + commodity.getCommodityDetail() +
+                                    "' where CommodityID='" + commodity.getCommodityID() + "'");
+                    // 修改图片文件或删除图片文件
+                    File image = new File("./database/commodity/" + commodity.getCommodityID() + ".jpg");
+                    if (image.exists()){
+                        image.delete();
+                    }
+                    if (commodity.isHavePhoto()) {
+                        image.createNewFile();
+                        // 将商品图片保存到本地
+                        byte[] data = commodity.getCommodityPhoto().getData();
+                        OutputStream os = new FileOutputStream(image);
+                        os.write(data);
+                        os.close();
+                    }
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
+                    if (rowAffected > 0) {
+                        returnMessage.setType(MessageType.EDIT_COMMODITY);
+                    } else {
+                        returnMessage.setType(MessageType.FAILURE);
+                    }
+                    oos.writeObject(returnMessage);
+                    DBHelper.close();
+                } break;
+                // 删除商品
+                case DELETE_COMMODITY:{
+                    String commodityID = message.getId();
+                    int rowAffected = DBHelper.update("jdbc:sqlite:database/commodity.db",
+                            "delete from Commodity where CommodityID='" + commodityID + "'");
+                    File image = new File("./database/commodity/" + commodityID + ".jpg");
+                    if (image.exists()){
+                        image.delete();
+                    }
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
+                    if (rowAffected > 0) {
+                        returnMessage.setType(MessageType.DELETE_COMMODITY);
+                    } else {
+                        returnMessage.setType(MessageType.FAILURE);
+                    }
+                    oos.writeObject(returnMessage);
                     DBHelper.close();
                 } break;
                     default:
