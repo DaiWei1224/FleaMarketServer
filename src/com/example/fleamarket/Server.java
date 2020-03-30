@@ -117,6 +117,7 @@ class ServerThread extends Thread{
                         // 设置邀请码为已经使用
                         DBHelper.update("jdbc:sqlite:database/invitation_code.db",
                                 "update InvitationCode set Use=true where Code='" + invitationCode+"'");
+                        DBHelper.close();
                         // 将该用户信息插入到User数据库中
                         DBHelper.update("jdbc:sqlite:database/user.db",
                                 "insert into User(ID,Password,Nickname)" + "values("+id+",'"+pw+"','用户_"+id+"')");
@@ -136,6 +137,7 @@ class ServerThread extends Thread{
                     String newNickname = message.getNickname();
                     int rowAffected = DBHelper.update("jdbc:sqlite:database/user.db",
                             "update User set Nickname='" + newNickname + "' where ID=" + id);
+                    DBHelper.close();
                     // 同时更新商品数据库
                     DBHelper.update("jdbc:sqlite:database/commodity.db",
                             "update Commodity set SellerName='" + newNickname + "' where SellerID=" + id);
