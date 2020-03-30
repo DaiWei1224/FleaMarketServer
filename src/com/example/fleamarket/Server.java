@@ -235,10 +235,10 @@ class ServerThread extends Thread{
                     ResultSet rs;
                     if (message.getId() == null) {
                         rs = DBHelper.query("jdbc:sqlite:database/commodity.db",
-                                "select * from Commodity order by PostTime DESC");
+                                "select * from Commodity order by PostTimeString DESC");
                     } else {
                         rs = DBHelper.query("jdbc:sqlite:database/commodity.db",
-                                "select * from Commodity where SellerID='" + message.getId() + "' order by PostTime DESC");
+                                "select * from Commodity where SellerID='" + message.getId() + "' order by PostTimeString DESC");
                     }
                     int i = 0;
                     int count = 0;
