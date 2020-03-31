@@ -188,6 +188,7 @@ class ServerThread extends Thread{
                     ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
                     NetMessage returnMessage = new NetMessage();
                     returnMessage.setType(MessageType.SAVE_AVATAR);
+                    returnMessage.setAvatar(message.getAvatar());
                     oos.writeObject(returnMessage);
                 } break;
                 // 发布商品

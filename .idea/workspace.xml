@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9c49b4b-2f41-46be-a701-dc1e15adaeab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/commodity.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/commodity.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/user.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/user.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/example/fleamarket/Server.java" afterDir="false" />
@@ -21,8 +22,29 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4695">
-              <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
+            <state relative-caret-position="437">
+              <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="48" column="19" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -30,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="667">
               <caret line="33" column="38" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,6 +118,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
+              <item name="com.example" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
+              <item name="com.example" type="1f31426a:PackageElementNode" />
+              <item name="myapplication" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
+              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -132,34 +182,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="fleamarket" type="462c0819:PsiDirectoryNode" />
               <item name="net" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
-              <item name="com.example" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
-              <item name="com.example" type="1f31426a:PackageElementNode" />
-              <item name="myapplication" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="FleaMarketServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="FleaMarketServer" type="616d4139:PackageViewModuleNode" />
-              <item name="Libraries" type="5c3f07af:PackageViewLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -299,9 +321,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2147651" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21744967" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -314,10 +335,10 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.9575071" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.9575071" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.9575071" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -401,23 +422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/Commodity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="734">
@@ -435,16 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="33" column="38" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/database/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -452,10 +446,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/TableCreater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/net/NetMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="11" selection-end-line="48" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/fleamarket/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4695">
-          <caret line="119" column="41" selection-start-line="119" selection-start-column="41" selection-end-line="119" selection-end-column="41" />
+        <state relative-caret-position="437">
+          <caret line="241" column="28" lean-forward="true" selection-start-line="241" selection-start-column="28" selection-end-line="241" selection-end-column="28" />
         </state>
       </provider>
     </entry>
