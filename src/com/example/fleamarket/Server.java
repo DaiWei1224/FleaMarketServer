@@ -121,15 +121,15 @@ class ServerThread extends Thread{
                         // 将该用户信息插入到User数据库中
                         DBHelper.update("jdbc:sqlite:database/user.db",
                                 "insert into User(ID,Password,Nickname)" + "values("+id+",'"+pw+"','用户_"+id+"')");
-
                         // 创建用户文件夹
-                        File file = new File("./database/user/" + id);
-                        file.mkdir();
-                        DBHelper.update("jdbc:sqlite:database/user/" + id + "/message_queue.db",
-                                "create table Commodity(" +
+//                        File file = new File("./database/user/" + id);
+//                        file.mkdir();
+//                        DBHelper.update("jdbc:sqlite:database/user/" + id + "/message_queue.db",
+//                                "create table MessageQueue(" +
+                        DBHelper.update("jdbc:sqlite:database/message_queue.db",
+                                "create table MessageQueue_" + id + "(" +
                                         "SenderID text not null," +
                                         "SenderName text not null," +
-                                        "ReceiverID text not null," +
                                         "SendTime text not null," +
                                         "Content text not null)");
                         DBHelper.close();
