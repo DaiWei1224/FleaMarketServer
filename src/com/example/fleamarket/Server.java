@@ -121,10 +121,18 @@ class ServerThread extends Thread{
                         // 将该用户信息插入到User数据库中
                         DBHelper.update("jdbc:sqlite:database/user.db",
                                 "insert into User(ID,Password,Nickname)" + "values("+id+",'"+pw+"','用户_"+id+"')");
-                        DBHelper.close();
+
                         // 创建用户文件夹
                         File file = new File("./database/user/" + id);
                         file.mkdir();
+                        DBHelper.update("jdbc:sqlite:database/user/" + id + "/message_queue.db",
+                                "create table Commodity(" +
+                                        "SenderID text not null," +
+                                        "SenderName text not null," +
+                                        "ReceiverID text not null," +
+                                        "SendTime text not null," +
+                                        "Content text not null)");
+                        DBHelper.close();
                         // 将注册成功后的账号发送给客户端
                         returnMessage.setType(MessageType.SUCCESS);
                         returnMessage.setId(id);
