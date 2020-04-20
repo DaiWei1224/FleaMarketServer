@@ -1,5 +1,6 @@
 package com.example.fleamarket;
 
+import com.example.fleamarket.database.DBHelper;
 import com.example.fleamarket.net.Chat;
 
 import java.io.IOException;
@@ -34,12 +35,20 @@ public class ChatThread extends Thread{
                         System.out.println("消息:" + chat.getContent() + " 已转发给用户" + chat.getReceiverID());
                     } catch (IOException e) {
                         e.printStackTrace();
+                        socketManager.get(chat.getReceiverID()).close();
                         socketManager.remove(chat.getReceiverID());
                     }
                 }
                 // 消息转发失败，将消息保存到消息列表数据库
                 if (!forwardSuccess) {
-                    System.out.println("消息:" + chat.getContent() + "已保存到数据库");
+                    DBHelper.update("jdbc:sqlite:database/message_queue.db",
+                            "insert into MessageQueue_" + chat.getReceiverID() +
+                                    "(SenderID,SenderName,SendTime,Content) values(" +
+                                    "'" + chat.getSenderID() + "'," +
+                                    "'" + chat.getSenderName() + "'," +
+                                    "'" + chat.getSendTime() + "'," +
+                                    "'" + chat.getContent() + "')");
+                    DBHelper.close();
                 }
             }
         } catch (Exception e) {
