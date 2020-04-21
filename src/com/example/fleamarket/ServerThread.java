@@ -101,8 +101,6 @@ class ServerThread extends Thread{
                         // 创建用户文件夹
 //                        File file = new File("./database/user/" + id);
 //                        file.mkdir();
-//                        DBHelper.update("jdbc:sqlite:database/user/" + id + "/message_queue.db",
-//                                "create table MessageQueue(" +
                         DBHelper.update("jdbc:sqlite:database/message_queue.db",
                                 "create table MessageQueue_" + id + "(" +
                                         "SenderID text not null," +
