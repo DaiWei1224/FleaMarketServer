@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 public class NetMessage implements Serializable {
-
     private MessageType type;
     private String id;
     private String pw;
@@ -13,6 +12,7 @@ public class NetMessage implements Serializable {
     private Commodity commodity;
     private int commodityNum;
     private List<Commodity> commodityList;
+    private List<Chat> messageList;
 
     public MessageType getType() {
         return type;
@@ -76,6 +76,14 @@ public class NetMessage implements Serializable {
 
     public void setCommodityList(List<Commodity> commodityList) {
         this.commodityList = commodityList;
+    }
+
+    public List<Chat> getMessageList() {
+        return messageList;
+    }
+
+    public void setMessageList(List<Chat> messageList) {
+        this.messageList = messageList;
     }
 
 }

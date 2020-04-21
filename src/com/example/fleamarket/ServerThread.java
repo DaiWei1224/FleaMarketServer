@@ -1,10 +1,7 @@
 package com.example.fleamarket;
 
 import com.example.fleamarket.database.DBHelper;
-import com.example.fleamarket.net.Commodity;
-import com.example.fleamarket.net.MessageType;
-import com.example.fleamarket.net.NetImage;
-import com.example.fleamarket.net.NetMessage;
+import com.example.fleamarket.net.*;
 import com.example.fleamarket.utils.MyUtil;
 
 import java.io.*;
@@ -324,6 +321,33 @@ class ServerThread extends Thread{
                     NetMessage returnMessage = new NetMessage();
                     if (rowAffected > 0) {
                         returnMessage.setType(MessageType.DELETE_COMMODITY);
+                    } else {
+                        returnMessage.setType(MessageType.FAILURE);
+                    }
+                    oos.writeObject(returnMessage);
+                    DBHelper.close();
+                } break;
+                case GET_UNREAD_MESSAGE:{
+                    ResultSet rs = DBHelper.query("jdbc:sqlite:database/message_queue.db",
+                            "select * from MessageQueue_" + message.getId() + " order by SendTime ASC");
+                    List<Chat> messageList = new ArrayList<Chat>();
+                    Chat chat;
+                    while (rs.next()){
+                        chat = new Chat();
+                        chat.setSenderID(rs.getString("SenderID"));
+                        chat.setSenderName(rs.getString("SenderName"));
+                        chat.setSendTime(rs.getString("SendTime"));
+                        chat.setContent(rs.getString("Content"));
+                        messageList.add(chat);
+                    }
+                    ObjectOutputStream oos= new ObjectOutputStream(clientConnection.getOutputStream());
+                    NetMessage returnMessage = new NetMessage();
+                    if (messageList.size() > 0) {
+                        returnMessage.setType(MessageType.GET_UNREAD_MESSAGE);
+                        returnMessage.setMessageList(messageList);
+                        // 删除服务器缓存的消息
+                        DBHelper.update("jdbc:sqlite:database/message_queue.db",
+                                "delete from MessageQueue_" + message.getId());
                     } else {
                         returnMessage.setType(MessageType.FAILURE);
                     }
