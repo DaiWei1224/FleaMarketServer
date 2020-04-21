@@ -25,30 +25,32 @@ public class ChatThread extends Thread{
                 Chat chat = (Chat) ois.readObject();
                 // 将次socket添加到hashmap
                 socketManager.put(chat.getSenderID(), clientConnection);
-                Socket forwardSocket = socketManager.get(chat.getReceiverID());
-                boolean forwardSuccess = false;
-                if (forwardSocket != null) {
-                    try {
-                        ObjectOutputStream oos= new ObjectOutputStream(forwardSocket.getOutputStream());
-                        oos.writeObject(chat);
-                        forwardSuccess = true;
-                        System.out.println("消息:" + chat.getContent() + " 已转发给用户" + chat.getReceiverID());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        socketManager.get(chat.getReceiverID()).close();
-                        socketManager.remove(chat.getReceiverID());
+                if (!chat.getSendTime().equals("Key")) {
+                    Socket forwardSocket = socketManager.get(chat.getReceiverID());
+                    boolean forwardSuccess = false;
+                    if (forwardSocket != null) {
+                        try {
+                            ObjectOutputStream oos= new ObjectOutputStream(forwardSocket.getOutputStream());
+                            oos.writeObject(chat);
+                            forwardSuccess = true;
+                            System.out.println("消息:" + chat.getContent() + " 已转发给用户" + chat.getReceiverID());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            socketManager.get(chat.getReceiverID()).close();
+                            socketManager.remove(chat.getReceiverID());
+                        }
                     }
-                }
-                // 消息转发失败，将消息保存到消息列表数据库
-                if (!forwardSuccess) {
-                    DBHelper.update("jdbc:sqlite:database/message_queue.db",
-                            "insert into MessageQueue_" + chat.getReceiverID() +
-                                    "(SenderID,SenderName,SendTime,Content) values(" +
-                                    "'" + chat.getSenderID() + "'," +
-                                    "'" + chat.getSenderName() + "'," +
-                                    "'" + chat.getSendTime() + "'," +
-                                    "'" + chat.getContent() + "')");
-                    DBHelper.close();
+                    // 消息转发失败，将消息保存到消息列表数据库
+                    if (!forwardSuccess) {
+                        DBHelper.update("jdbc:sqlite:database/message_queue.db",
+                                "insert into MessageQueue_" + chat.getReceiverID() +
+                                        "(SenderID,SenderName,SendTime,Content) values(" +
+                                        "'" + chat.getSenderID() + "'," +
+                                        "'" + chat.getSenderName() + "'," +
+                                        "'" + chat.getSendTime() + "'," +
+                                        "'" + chat.getContent() + "')");
+                        DBHelper.close();
+                    }
                 }
             }
         } catch (Exception e) {
